@@ -4,7 +4,7 @@
       <a ng-click="scrollTo('date')">Date</a>
     </li>
     <li>
-      <a ng-click="scrollTo('ceremony')">Location</a>
+      <a ng-click="scrollTo('ceremony')">Ceremony</a>
     </li>
     <li>
       <a ng-click="scrollTo('reception')">Reception</a>
@@ -13,8 +13,11 @@
       <a ng-click="scrollTo('registry')">Registry</a>
     </li>
     <li>
-    <a ng-click="scrollTo('photos')">Engagement Photos</a>
+    <a ng-click="scrollTo('photos')">Photos</a>
   </li>
+  <li>
+    <a ng-click="scrollTo('rsvp')">RSVP</a>
+    </li>
   </ul>
   <h3 class="text-muted">John</h3>
 </div> -->
@@ -22,28 +25,33 @@
 <!-- <img src="images/john_jes.JPG" class="img-responsive center-block" alt="John and Jesyka!"> -->
 <div class="date-block">
   <div class="date-text">
-    <h1>WE ARE GETTING MARRIED!</h1>
-    <h2>JUNE 20TH, 2015 IN PLYMOUTH, MI</h2>
+    <p>JOHN + JESYKA</p>
   </div>
 </div>
 <br>
 <div id="date" class="row text-center">
-  <h4>June 20th 2015</h4>
+  <h2>June 20th, 2015</h4>
   <timer end-time="1434837600000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
 </div>
 <br>
 <div id="ceremony" class="row text-center">
-
+  <ui-gmap-google-map center="ceremony.center" zoom="ceremony.zoom" options="options" class="gmap">
+    <ui-gmap-marker coords="ceremony.marker" idkey="ceremony"></ui-gmap-marker>
+  </ui-gmap-google-map>
 </div>
 <br>
 <div id="reception" class="row text-center">
-
+Map Goes Here
 </div>
 <br>
 <div id="registry" class="row text-center">
-
+Registry link goes here
 </div>
 <br>
 <div id="photos" class="row text-center">
-
+Pictures go here
+</div>
+<br>
+<div id="rsvp" class="row text-center">
+  RSVP STUFF
 </div>

@@ -93,6 +93,11 @@ body {
   }
 
 }
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .date-block {
   background: url("../images/john_jes.JPG");
   background-size: 100% auto;
@@ -100,9 +105,14 @@ body {
   text-align: center;
 }
 .date-text {
-  color: #ff0000;
+  color: white;
   position: absolute;
   bottom: 450px;
   left: 0;
   right: 0;
+  font-size: 100px;
+}
+.angular-google-map-container {
+  height: 400px;
+  width: 100%;
 }
