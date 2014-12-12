@@ -39,13 +39,13 @@ angular.module('weddingSiteApp')
         latitude: 42.277704,
         longitude: -83.742639
       },
-      zoom: 10
+      zoom: 13
     };
 
     uiGmapGoogleMapApi.then(function (maps) {
       console.log("Maps loaded");
 
-      console.log(maps);
+      //console.log(maps);
     });
 
   });
