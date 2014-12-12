@@ -8,8 +8,8 @@
  * Controller of the weddingSiteApp
  */
 angular.module('weddingSiteApp')
-  .controller('MainCtrl', function ($scope, $location, uiGmapGoogleMapApi) {
-    $scope.scrollTo = function (id) {
+  .controller('MainCtrl', function($scope, $location, uiGmapGoogleMapApi) {
+    $scope.scrollTo = function(id) {
       $location.hash(id);
       $anchorScroll();
     };
@@ -32,17 +32,19 @@ angular.module('weddingSiteApp')
 
     $scope.reception = {
       center: {
-        latitude: 42.277704,
-        longitude: -83.742639
+        latitude: 42.277671,
+        longitude: -83.742632
       },
       marker: {
-        latitude: 42.277704,
-        longitude: -83.742639
+        latitude: 42.277671,
+        longitude: -83.742632
       },
-      zoom: 13
+      zoom: 15
     };
 
-    uiGmapGoogleMapApi.then(function (maps) {
+    $scope.pictures = _.range(20);
+
+    uiGmapGoogleMapApi.then(function(maps) {
       console.log("Maps loaded");
 
       //console.log(maps);

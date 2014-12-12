@@ -30,30 +30,44 @@
 </div>
 <br>
 <div id="date" class="row text-center">
-  <h2>June 20th, 2015</h4>
+  <h2>Saturday, June 20th, 2015</h4>
   <timer end-time="1434837600000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
 </div>
 <br>
 <div id="ceremony" class="row text-center">
-  <h2>The Ceremony</h4>
+  <h2>Ceremony</h4>
+    <p>5:00pm - 6:00pm</p>
+    <address>
+      44809 Gov. Bradford<br>
+      Plymouth, MI 48105<br>
+    </address>
   <ui-gmap-google-map center="ceremony.center" zoom="ceremony.zoom" options="options" class="gmap">
     <ui-gmap-marker coords="ceremony.marker" idkey="ceremony"></ui-gmap-marker>
   </ui-gmap-google-map>
 </div>
 <br>
 <div id="reception" class="row text-center">
-  <h2>The Reception</h4>
+  <h2>Reception</h4>
+    <p>5:00pm - 6:00pm</p>
+    <address>
+      Cottage Inn Pizza<br>
+      512 East William Street<br>
+      Ann Arbor, MI 48104<br>
+    </address>
   <ui-gmap-google-map center="reception.center" zoom="reception.zoom" options="options" class="gmap">
     <ui-gmap-marker coords="reception.marker" idkey="reception"></ui-gmap-marker>
   </ui-gmap-google-map>
 </div>
 <br>
 <div id="registry" class="row text-center">
-Registry link goes here
+  <h2>Registry</h4>
 </div>
 <br>
 <div id="photos" class="row text-center">
-Pictures go here
+  <h2>Engagement Photos</h4>
+  <div class="col-xs-12 col-sm-6 col-md-3 pic-container" ng-repeat="picture in pictures">
+    <img src="http://www.fillmurray.com/g/200/200">
+  </div>
 </div>
 <br>
 <div id="rsvp" class="row text-center">
