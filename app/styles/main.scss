@@ -92,10 +92,16 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+  .container-fluid {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
 
 }
-.container-fluid {
-  padding: 0;
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    padding: 0;
+  }
 
 }
 .row {
