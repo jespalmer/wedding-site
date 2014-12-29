@@ -23,11 +23,12 @@
 </div> -->
 
 <!-- <img src="images/john_jes.JPG" class="img-responsive center-block" alt="John and Jesyka!"> -->
-<div class="date-block">
+<!-- <div class="date-block">
   <div class="date-text">
     <p>JOHN + JESYKA</p>
   </div>
-</div>
+</div> -->
+<img src="../images/hero_img.jpg" alt="" class="img-responsive">
 <br>
 <div id="date" class="row text-center">
   <h2>Saturday, June 20th, 2015</h4>
@@ -35,27 +36,21 @@
 </div>
 <br>
 <div id="ceremony" class="row text-center">
-  <h2>Ceremony</h4>
-    <p>5:00pm - 6:00pm</p>
-    <address>
+  <h2>Ceremony</h2>
+  <p>5:00pm - 6:00pm</p>
+  <address>
       44809 Gov. Bradford<br>
       Plymouth, MI 48105<br>
     </address>
-  <ui-gmap-google-map center="ceremony.center" zoom="ceremony.zoom" options="options" class="gmap">
-    <ui-gmap-marker coords="ceremony.marker" idkey="ceremony"></ui-gmap-marker>
-  </ui-gmap-google-map>
-</div>
-<br>
-<div id="reception" class="row text-center">
-  <h2>Reception</h4>
-    <p>5:00pm - 6:00pm</p>
-    <address>
+  <h2>Reception</h2>
+  <p>5:00pm - 6:00pm</p>
+  <address>
       Cottage Inn Pizza<br>
       512 East William Street<br>
       Ann Arbor, MI 48104<br>
     </address>
-  <ui-gmap-google-map center="reception.center" zoom="reception.zoom" options="options" class="gmap">
-    <ui-gmap-marker coords="reception.marker" idkey="reception"></ui-gmap-marker>
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options" class="gmap">
+    <ui-gmap-markers models="locations" coords="'loc'"></ui-gmap-markers>
   </ui-gmap-google-map>
 </div>
 <br>

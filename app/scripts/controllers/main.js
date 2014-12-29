@@ -18,29 +18,27 @@ angular.module('weddingSiteApp')
       scrollwheel: false
     };
 
-    $scope.ceremony = {
-      center: {
+    $scope.locations = [{
+      id: "ceremony",
+      loc: {
         latitude: 42.366001,
         longitude: -83.483981
-      },
-      marker: {
-        latitude: 42.366001,
-        longitude: -83.483981
-      },
-      zoom: 13
-    };
+      }
+    }, {
+      id: "reception",
+      loc: {
+        latitude: 42.277671,
+        longitude: -83.742632
+      }
+    }];
 
-    $scope.reception = {
+    $scope.map = {
       center: {
-        latitude: 42.277671,
-        longitude: -83.742632
+        latitude: 42.333497,
+        longitude: -83.604605
       },
-      marker: {
-        latitude: 42.277671,
-        longitude: -83.742632
-      },
-      zoom: 15
-    };
+      zoom: 12
+    }
 
     $scope.pictures = _.range(20);
 
