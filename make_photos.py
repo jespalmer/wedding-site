@@ -14,6 +14,6 @@ def is_photo(name):
 
   return valid
 
-with open('photos.json', 'w') as f:
+with open('app/photos.json', 'w') as f:
   f.write(json.dumps(['../images/{0}'.format(i)
-                      for i in os.listdir('app/images') if is_photo(i)]).replace('"', "'"))
+                      for i in os.listdir('app/images') if is_photo(i)]))

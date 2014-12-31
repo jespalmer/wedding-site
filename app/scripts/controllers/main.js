@@ -8,7 +8,8 @@
  * Controller of the weddingSiteApp
  */
 angular.module('weddingSiteApp')
-  .controller('MainCtrl', function($scope, $location, uiGmapGoogleMapApi, $anchorScroll) {
+  .controller('MainCtrl', function($scope, $location, uiGmapGoogleMapApi, $anchorScroll, $http, $window) {
+
     $scope.scrollTo = function(id) {
       $location.hash(id);
       $anchorScroll();
@@ -16,35 +17,52 @@ angular.module('weddingSiteApp')
 
     $scope.locations = [{
       id: 'ceremony',
+      show: true,
+      text: '<b>Ceremony</b><br><a target="_blank" href="https://maps.google.com?daddr=44809+Gov.+Bradford+Plymouth+MI+48170">The Palgut Residence</a>',
       loc: {
         latitude: 42.366001,
-        label: 'Ceremony',
         longitude: -83.483981
       }
     }, {
       id: 'reception',
+      show: true,
+      text: '<b>Reception</b><br><a target="_blank" href="https://maps.google.com?saddr=44809+Gov.+Bradford+Plymouth+MI+48170&daddr=512+East+William+Street+Ann+Arbor+MI+48104">The Original Cottage Inn</a>',
       loc: {
         latitude: 42.277671,
-        label: 'Reception',
         longitude: -83.742632
       }
     }];
+
+    var zoom = 10; //Phone
+    var draggable = false;
+
+    if ($window.innerWidth > 992) { //Desktop
+      zoom = 12;
+      draggable = true;
+    } else if ($window.innerWidth > 768) { //Tablet
+      zoom = 11;
+    }
 
     $scope.map = {
       center: {
         latitude: 42.344625,
         longitude: -83.599521
       },
-      zoom: 12
+      zoom: zoom
     };
 
-    //Really long generated data after this point
+    $http({
+      url: '/photos.json',
+      method: 'GET'
+    }).success(function(photos) {
+      $scope.photos = photos;
+    });
 
-    $scope.photos = ['../images/resized2-037.jpg', '../images/resized2-056.jpg', '../images/resized2-031.jpg', '../images/resized2-066.jpg', '../images/resized2-044.jpg', '../images/resized2-064.jpg', '../images/resized2-049.jpg', '../images/resized2-003.jpg', '../images/resized2-062.jpg', '../images/resized2-018.jpg', '../images/resized2-036.jpg', '../images/resized2-055.jpg', '../images/resized2-016.jpg', '../images/resized2-006.jpg', '../images/resized2-069.jpg', '../images/resized2-028.jpg', '../images/resized2-026.jpg', '../images/resized2-030.jpg', '../images/resized2-015.jpg', '../images/resized2-046.jpg', '../images/resized2-027.jpg', '../images/resized2-019.jpg', '../images/resized2-065.jpg', '../images/resized2-070.jpg', '../images/resized2-038.jpg', '../images/resized2-041.jpg', '../images/resized2-067.jpg', '../images/resized2-051.jpg', '../images/resized2-024.jpg', '../images/resized2-058.jpg', '../images/resized2-007.jpg', '../images/resized2-032.jpg', '../images/resized2-011.jpg', '../images/resized2-048.jpg', '../images/resized2-025.jpg', '../images/resized2-020.jpg'];
     $scope.options = {
       scrollwheel: false,
       labelContent: 'label',
-      styles: [{
+      draggable: draggable,
+      styles: [{ //Really long generated data after this point
         'stylers': [{
           'saturation': -45
         }, {

@@ -72,8 +72,11 @@ body {
   }
 
 }
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+/* Responsive: Desktop */
+@media screen and (min-width: 992px) {
+  .container-fluid {
+    padding-top: 0;
+  }
   .container {
     max-width: 730px;
 
@@ -107,11 +110,25 @@ body {
     height: 800px;
   }
   .timer {
+    padding-top: 300px;
+  }
+  h2 {
+    font-size: 80px;
+    font-weight: bold;
+  }
+  .section {
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+  #photos {
+    font-size: 40px;
+  }
+  #directions {
     padding-top: 350px;
   }
-
 }
-@media screen and (max-width: 768px) {
+/* Responsive: Tablets */
+@media screen and (max-width: 992px) {
   .container-fluid {
     padding: 0;
   }
@@ -122,25 +139,65 @@ body {
     height: 400px;
   }
   .timer {
-    padding-top: 175px;
+    padding-top: 100px;
+
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .section {
+    font-size: 40px;
+    padding-bottom: 40px;
+  }
+  #photos {
+    font-size: 40px;
+  }
+  #directions {
+    padding-top: 280px;
   }
 
 }
-h2 {
-  font-size: 80px;
-  font-weight: bold;
+/* Responsive: Phones */
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    padding: 0;
+  }
+  .section {
+    height: 200px;
+
+    font-size: 15px;
+    padding-bottom: 40px;
+  }
+  .angular-google-map-container {
+    height: 200px;
+  }
+  .timer {
+    padding-top: 20px;
+
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #photos {
+    font-size: 20px;
+  }
+  #directions {
+    padding-top: 50px;
+  }
 }
 .row {
   margin: 0;
   padding: 0;
 
 }
-.section {
-  font-size: 40px;
-}
 .angular-google-map-container {
   width: 100%;
 }
 .pic-container {
   padding-top: 10px;
+}
+.gm-style-iw + div {
+  display: none;
 }
