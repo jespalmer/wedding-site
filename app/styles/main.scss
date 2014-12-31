@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,600,300,500,100,200,800,900);
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -15,6 +17,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   overflow-x: hidden;
+  font-family: 'Raleway', sans-serif;
 
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -96,20 +99,46 @@ body {
     padding-left: 120px;
     padding-right: 120px;
   }
+  .section {
+    height: 800px;
+
+  }
+  .angular-google-map-container {
+    height: 800px;
+  }
+  .timer {
+    padding-top: 350px;
+  }
 
 }
 @media screen and (max-width: 768px) {
   .container-fluid {
     padding: 0;
   }
+  .section {
+    height: 400px;
+  }
+  .angular-google-map-container {
+    height: 400px;
+  }
+  .timer {
+    padding-top: 175px;
+  }
 
+}
+h2 {
+  font-size: 80px;
+  font-weight: bold;
 }
 .row {
   margin: 0;
   padding: 0;
+
+}
+.section {
+  font-size: 40px;
 }
 .angular-google-map-container {
-  height: 600px;
   width: 100%;
 }
 .pic-container {
