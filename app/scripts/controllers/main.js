@@ -15,7 +15,7 @@ angular.module('weddingSiteApp')
       $anchorScroll();
     }
 
-    $rootScope.$on('duScrollspy:becameInactive', function($event, $element){
+    $rootScope.$on('duScrollspy:becameInactive', function($event, $element) {
       $('#nav-collapse').collapse('hide');
     });
 
@@ -37,21 +37,30 @@ angular.module('weddingSiteApp')
       }
     }];
 
-    var zoom = 10; //Phone
+    var zoom = 9; //Phone
     var draggable = false;
+    var center = {
+      latitude: 42.348090,
+      longitude: -83.542621
+    };
 
     if ($window.innerWidth > 992) { //Desktop
       zoom = 12;
       draggable = true;
+      center = {
+        latitude: 42.344625,
+        longitude: -83.599521
+      };
     } else if ($window.innerWidth > 768) { //Tablet
       zoom = 11;
+      center = {
+        latitude: 42.344625,
+        longitude: -83.599521
+      };
     }
 
     $scope.map = {
-      center: {
-        latitude: 42.344625,
-        longitude: -83.599521
-      },
+      center: center,
       zoom: zoom
     };
 
