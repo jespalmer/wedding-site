@@ -104,6 +104,12 @@ body {
 .navbar {
   font-size: $font-small;
 }
+.navbar-brand.active {
+  color: #f2f2f2;
+}
+.navbar-header .navbar-brand {
+  color: #f2f2f2;
+}
 .container-fluid {
   @include desktop {
     padding-top: 0;
