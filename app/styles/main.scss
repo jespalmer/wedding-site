@@ -72,85 +72,6 @@ body {
   }
 
 }
-/* Responsive: Desktop */
-// @media screen and (min-width: 992px) {
-//
-//   /* Remove the padding we set earlier */
-//   .footer {
-//     padding-left: 0;
-//     padding-right: 0;
-//
-//   }
-//   /* Space out the masthead */
-//   .header {
-//     margin-bottom: 30px;
-//
-//   }
-//   /* Remove the bottom border on the jumbotron for visual effect */
-//   .jumbotron {
-//     border-bottom: 0;
-//   }
-//   .timer {
-//     padding-top: 300px;
-//   }
-//   h2 {
-//     font-size: 80px;
-//     font-weight: bold;
-//   }
-//   .section {
-//     font-size: 40px;
-//     padding-bottom: 40px;
-//   }
-//   #photos {
-//     font-size: 40px;
-//   }
-//   #directions {
-//     padding-top: 350px;
-//   }
-//
-// }
-// /* Responsive: Tablets */
-// @media screen and (max-width: 992px) {
-//   .timer {
-//     padding-top: 100px;
-//
-//   }
-//   h2 {
-//     font-size: 40px;
-//     font-weight: bold;
-//   }
-//   .section {
-//     font-size: 40px;
-//     padding-bottom: 40px;
-//   }
-//   #photos {
-//     font-size: 40px;
-//   }
-//   #directions {
-//     padding-top: 280px;
-//   }
-//
-// }
-// /* Responsive: Phones */
-// @media screen and (max-width: 768px) {
-//   .timer {
-//     padding-top: 20px;
-//
-//   }
-//   h2 {
-//     font-size: 20px;
-//     font-weight: bold;
-//   }
-//   #photos {
-//     font-size: 20px;
-//   }
-//   #directions {
-//     padding-top: 50px;
-//   }
-//
-// }
-//   .header,
-//   .marketing,
 @mixin phone {
   @media (max-width: #{$screen-xs-max}) {
     @content;
@@ -169,18 +90,24 @@ body {
   }
 
 }
-.container {
+$font-large: 40px;
+$font-small: 15px;
 
-  @include desktop {
+body {
+  font-size: $font-large;
 
-    max-width: 730px;
+  @include phone {
+    font-size: $font-small;
   }
 
+}
+.navbar {
+  font-size: $font-small;
 }
 .container-fluid {
   @include desktop {
     padding-top: 0;
-
+    max-width: 1300px;
   }
   @include tablet {
     padding: 0;
@@ -199,13 +126,36 @@ body {
   }
   @include phone {
     height: 200px;
-    font-size: 15px;
-    padding-bottom: 40px;
   }
 
 }
+.btn {
+
+  border: 2px solid #f2f2f2;
+  background: transparent;
+  color: #f2f2f2;
+
+  /* CSS Transition */
+  -webkit-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -ms-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+
+  font-size: $font-large;
+  font-weight: bold;
+
+  @include phone {
+    font-size: $font-small;
+  }
+
+}
+.btn:hover {
+  background: rgba(242, 242, 242, 0.25);
+}
 .angular-google-map-container {
   height: 800px;
+  width: 100%;
 
   @include tablet {
     height: 400px;
@@ -228,30 +178,137 @@ h2 {
   }
 
 }
-#photos {
-  font-size: 40px;
-  @include phone {
-    font-size: 20px;
-  }
-
-}
 .row {
   margin: 0;
   padding: 0;
 
-}
-.angular-google-map-container {
-  width: 100%;
 }
 .pic-container {
   padding-top: 10px;
 }
 .gm-style-iw + div {
   display: none;
+}
+#hero {
+  background: url("../images/hero.jpg") no-repeat center center fixed;
+  background-size: 100% auto;
+  background-height: 800px;
+
+  h2 {
+    padding-top: 350px;
+    color: white;
+
+    @include tablet {
+      padding-top: 200px;
+
+    }
+    @include phone {
+      padding-top: 75px;
+    }
+  }
 
 }
 #date {
-  background: url("../images/rsvp.jpg") no-repeat center center fixed;
+  height: 600px;
+
+  @include tablet {
+    height: 700px;
+  }
+  @include phone {
+    height: 130px;
+
+  }
+  div {
+    padding-top: 200px;
+
+    @include tablet {
+      padding-top: 750px;
+
+    }
+    @include phone {
+      padding-top: 20px;
+    }
+  }
+
+}
+#ceremony {
+  background: url("../images/ceremony2.jpg") no-repeat center center fixed;
   background-size: 100% auto;
   background-height: 800px;
+
+  div {
+    padding-top: 175px;
+    color: white;
+
+    @include tablet {
+      padding-top: 100px;
+
+    }
+    @include phone {
+      padding-top: 10px;
+    }
+  }
+
+}
+#reception {
+  background: url("../images/reception2.jpg") no-repeat center center fixed;
+  background-size: 100% auto;
+  background-height: 800px;
+
+  div {
+    padding-top: 175px;
+    color: white;
+
+    @include tablet {
+      padding-top: 100px;
+
+    }
+    @include phone {
+      padding-top: 0;
+    }
+  }
+
+}
+#registry {
+  background: url("../images/registry.jpg") no-repeat center center fixed;
+  background-size: 100% auto;
+  background-height: 800px;
+  div {
+    padding-top: 325px;
+    color: white;
+
+    @include tablet {
+      padding-top: 100px;
+
+    }
+    @include phone {
+      padding-top: 75px;
+    }
+  }
+
+}
+#photos {
+  font-size: $font-large;
+  @include phone {
+    font-size: $font-small;
+  }
+
+}
+#rsvp {
+  background: url("../images/rsvp2.jpg") no-repeat center center fixed;
+  background-size: 100% auto;
+  background-height: 800px;
+
+  div {
+    padding-top: 500px;
+    color: white;
+
+    @include tablet {
+      padding-top: 100px;
+
+    }
+    @include phone {
+      padding-top: 85px;
+    }
+  }
 }

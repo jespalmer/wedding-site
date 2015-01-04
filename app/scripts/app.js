@@ -17,9 +17,10 @@ angular
     'ngSanitize',
     'ngTouch',
     'timer',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'duScroll'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -28,10 +29,16 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).config(function (uiGmapGoogleMapApiProvider) {
+  }).config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
       //    key: 'your api key',
       v: '3.17',
-      libraries: ''//weather,geometry,visualization'
+      libraries: '' //weather,geometry,visualization'
     });
-  });
+  }).run(function($rootScope, $location, $anchorScroll, $routeParams) {
+    //when the route is changed scroll to the proper element.
+    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+      $location.hash($routeParams.scrollTo);
+      $anchorScroll();
+    });
+  }).value('duScrollOffset', 30);;

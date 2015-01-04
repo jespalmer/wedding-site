@@ -8,12 +8,16 @@
  * Controller of the weddingSiteApp
  */
 angular.module('weddingSiteApp')
-  .controller('MainCtrl', function($scope, $location, uiGmapGoogleMapApi, $anchorScroll, $http, $window) {
+  .controller('MainCtrl', function($scope, $location, uiGmapGoogleMapApi, $rootScope, $http, $window, $routeParams) {
 
-    $scope.scrollTo = function(id) {
-      $location.hash(id);
+    if ($routeParams.scrollTo) {
+      $location.hash($routeParams.scrollTo);
       $anchorScroll();
-    };
+    }
+
+    $rootScope.$on('duScrollspy:becameInactive', function($event, $element){
+      $('#nav-collapse').collapse('hide');
+    });
 
     $scope.locations = [{
       id: 'ceremony',

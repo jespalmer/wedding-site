@@ -21,16 +21,68 @@
   </ul>
   <h3 class="text-muted">John</h3>
 </div> -->
-<img src="images/resized-hero.jpg" alt="" class="img-responsive">
-<div id="date" class="row text-center section">
-  <h2 class="timer">Saturday, June 20th, 2015</h2>
-  <timer end-time="1434837600000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#hero" du-smooth-scroll du-scrollspy>Jesyka +John</a>
+    </div>
+    <div class="collapse navbar-collapse" id="nav-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#date" du-smooth-scroll du-scrollspy>Date</a>
+        </li>
+        <li><a href="#ceremony" du-smooth-scroll du-scrollspy>Ceremony</a>
+        </li>
+        <li><a href="#reception" du-smooth-scroll du-scrollspy>Reception</a>
+        </li>
+        <li><a href="#directions" du-smooth-scroll du-scrollspy>Directions</a>
+        </li>
+        <li><a href="#registry" du-smooth-scroll du-scrollspy>Registry</a>
+        </li>
+        <li><a href="#above-photos" du-smooth-scroll du-scrollspy>Photos</a>
+        </li>
+        <li><a href="#rsvp" du-smooth-scroll du-scrollspy>Rsvp</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="hero" class="section text-center">
+  <h2>Jesyka + John</h2>
 </div>
-<div id="ceremony" class="row text-center section">
-  <img src="images/resized-ceremony.jpg" alt="" class="img-responsive">
+<!-- <img src="images/resized-hero.jpg" alt="" class="img-responsive"> -->
+<div id="date" class="text-center">
+  <div>
+    <h2 class="timer">Saturday, June 20th, 2015</h2>
+    <timer end-time="1434837600000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+  </div>
 </div>
-<div id="reception" class="row text-center section">
-  <img src="images/resized-reception.jpg" alt="" class="img-responsive">
+<div id="ceremony" class="text-center section">
+  <div>
+    <h2>Ceremony</h2>
+    <p>5:00pm - 6:00pm
+      <p>
+        <br>
+        <p>44809 Gov. Bradford</p>
+        <p>Plymouth, MI 48170</p>
+  </div>
+</div>
+<div id="reception" class="text-center section">
+  <div>
+    <h2>Reception</h2>
+    <p>6:30pm - 11:30pm
+      <p>
+        <br>
+        <p>Cottage Inn Pizza</p>
+        <p>512 East William Street
+          <p>
+            <p>Ann Arbor, MI 48104</p>
+  </div>
 </div>
 
 <img id="directions" src="images/resized-directions.jpg" alt="" class="img-responsive">
@@ -44,12 +96,14 @@
     <!-- </ui-gmap-markers> -->
   </ui-gmap-google-map>
 </div>
-<br>
-<div id="registry" class="row text-center section">
-  <h2>Registry</h2>
-  <p>Visit our registry at <a href="https://wanderable.com/hm/jesykajohn/">Wanderable</a>
-  </p>
+<div id="registry" class="text-center row section">
+  <div>
+    <a target="_blank" href="https://wanderable.com/hm/jesykajohn/">
+      <button class="btn button">View Our Registry</button>
+    </a>
+  </div>
 </div>
+<div id="above-photos"></div>
 <br>
 <div id="photos" class="row text-center">
   <h2>Engagement Photography</h2>
@@ -60,4 +114,12 @@
     <img ng-src="{{photo}}" alt="" class="img-responsive center-block">
   </div>
 </div>
-<img id="directions" src="images/rsvp.jpg" alt="" class="img-responsive">
+<br>
+<div id="rsvp" class="row section text-center">
+  <div>
+    <h2>RSVP</h2>
+    <p>by May 23rd, 2015</a>
+    </p>
+  </div>
+</div>
+<br>
