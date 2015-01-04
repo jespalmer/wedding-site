@@ -52,7 +52,7 @@ angular.module('weddingSiteApp')
     };
 
     $http({
-      url: '/photos.json',
+      url: 'photos.json',
       method: 'GET'
     }).success(function(photos) {
       $scope.photos = photos;

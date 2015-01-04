@@ -73,119 +73,167 @@ body {
 
 }
 /* Responsive: Desktop */
-@media screen and (min-width: 992px) {
-  .container-fluid {
-    padding-top: 0;
+// @media screen and (min-width: 992px) {
+//
+//   /* Remove the padding we set earlier */
+//   .footer {
+//     padding-left: 0;
+//     padding-right: 0;
+//
+//   }
+//   /* Space out the masthead */
+//   .header {
+//     margin-bottom: 30px;
+//
+//   }
+//   /* Remove the bottom border on the jumbotron for visual effect */
+//   .jumbotron {
+//     border-bottom: 0;
+//   }
+//   .timer {
+//     padding-top: 300px;
+//   }
+//   h2 {
+//     font-size: 80px;
+//     font-weight: bold;
+//   }
+//   .section {
+//     font-size: 40px;
+//     padding-bottom: 40px;
+//   }
+//   #photos {
+//     font-size: 40px;
+//   }
+//   #directions {
+//     padding-top: 350px;
+//   }
+//
+// }
+// /* Responsive: Tablets */
+// @media screen and (max-width: 992px) {
+//   .timer {
+//     padding-top: 100px;
+//
+//   }
+//   h2 {
+//     font-size: 40px;
+//     font-weight: bold;
+//   }
+//   .section {
+//     font-size: 40px;
+//     padding-bottom: 40px;
+//   }
+//   #photos {
+//     font-size: 40px;
+//   }
+//   #directions {
+//     padding-top: 280px;
+//   }
+//
+// }
+// /* Responsive: Phones */
+// @media screen and (max-width: 768px) {
+//   .timer {
+//     padding-top: 20px;
+//
+//   }
+//   h2 {
+//     font-size: 20px;
+//     font-weight: bold;
+//   }
+//   #photos {
+//     font-size: 20px;
+//   }
+//   #directions {
+//     padding-top: 50px;
+//   }
+//
+// }
+//   .header,
+//   .marketing,
+@mixin phone {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
   }
-  .container {
+
+}
+@mixin tablet {
+  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+
+}
+@mixin desktop {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+
+}
+.container {
+
+  @include desktop {
+
     max-width: 730px;
-
-  }
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-  .container-fluid {
-    padding-left: 120px;
-    padding-right: 120px;
-  }
-  .section {
-    height: 800px;
-
-  }
-  .angular-google-map-container {
-    height: 800px;
-  }
-  .timer {
-    padding-top: 300px;
-  }
-  h2 {
-    font-size: 80px;
-    font-weight: bold;
-  }
-  .section {
-    font-size: 40px;
-    padding-bottom: 40px;
-  }
-  #photos {
-    font-size: 40px;
-  }
-  #directions {
-    padding-top: 350px;
-  }
-}
-/* Responsive: Tablets */
-@media screen and (max-width: 992px) {
-  .container-fluid {
-    padding: 0;
-  }
-  .section {
-    height: 400px;
-  }
-  .angular-google-map-container {
-    height: 400px;
-  }
-  .timer {
-    padding-top: 100px;
-
-  }
-  h2 {
-    font-size: 40px;
-    font-weight: bold;
-  }
-  .section {
-    font-size: 40px;
-    padding-bottom: 40px;
-  }
-  #photos {
-    font-size: 40px;
-  }
-  #directions {
-    padding-top: 280px;
   }
 
 }
-/* Responsive: Phones */
-@media screen and (max-width: 768px) {
-  .container-fluid {
+.container-fluid {
+  @include desktop {
+    padding-top: 0;
+
+  }
+  @include tablet {
+    padding: 0;
+
+  }
+  @include phone {
     padding: 0;
   }
-  .section {
+
+}
+.section {
+  height: 800px;
+
+  @include tablet {
+    height: 400px;
+  }
+  @include phone {
     height: 200px;
-
     font-size: 15px;
     padding-bottom: 40px;
   }
-  .angular-google-map-container {
+
+}
+.angular-google-map-container {
+  height: 800px;
+
+  @include tablet {
+    height: 400px;
+  }
+  @include phone {
     height: 200px;
   }
-  .timer {
-    padding-top: 20px;
+
+}
+h2 {
+  font-size: 80px;
+  font-weight: bold;
+
+  @include tablet {
+    font-size: 40px;
 
   }
-  h2 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  #photos {
+  @include phone {
     font-size: 20px;
   }
-  #directions {
-    padding-top: 50px;
+
+}
+#photos {
+  font-size: 40px;
+  @include phone {
+    font-size: 20px;
   }
+
 }
 .row {
   margin: 0;
@@ -200,4 +248,10 @@ body {
 }
 .gm-style-iw + div {
   display: none;
+
+}
+#date {
+  background: url("../images/rsvp.jpg") no-repeat center center fixed;
+  background-size: 100% auto;
+  background-height: 800px;
 }
