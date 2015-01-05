@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git push
+
 grunt build
 
 git branch -D gh-pages
