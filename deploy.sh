@@ -2,6 +2,8 @@
 
 git push
 
+npm install
+bower install
 grunt build
 
 git branch -D gh-pages
