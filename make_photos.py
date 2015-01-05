@@ -12,6 +12,6 @@ def is_photo(name):
 
   return valid
 
-with open(sys.argv[1], 'w') as f:
-  f.write(json.dumps(['images/{0}'.format(i)
-                      for i in os.listdir(sys.argv[0]) if is_photo(i)]))
+with open(sys.argv[2], 'w') as f:
+  f.write(json.dumps(['../images/{0}'.format(i)
+                      for i in os.listdir(sys.argv[1]) if is_photo(i)]))
