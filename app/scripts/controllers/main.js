@@ -16,7 +16,11 @@ angular.module('weddingSiteApp')
     }
 
     $rootScope.$on('duScrollspy:becameInactive', function($event, $element) {
-      $('#nav-collapse').collapse('hide');
+      var nav = $('#nav-collapse');
+
+      if (nav.hasClass('in')) {
+        $('#nav-collapse').collapse('hide');
+      }
     });
 
     $scope.locations = [{

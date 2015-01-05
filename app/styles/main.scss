@@ -15,62 +15,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* Space out content a bit */
 body {
   padding-top: 20px;
-  padding-bottom: 20px;
   overflow-x: hidden;
   font-family: 'Raleway', sans-serif;
-
-}
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-
-}
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-
-}
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-
-}
-.container-narrow > hr {
-  margin: 30px 0;
-
-}
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-
-}
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-
 }
 @mixin phone {
   @media (max-width: #{$screen-xs-max}) {
@@ -191,15 +137,31 @@ h2 {
 }
 .pic-container {
   padding-top: 10px;
+
+  @include phone {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
 }
 .gm-style-iw + div {
   display: none;
 }
 #hero {
-  background: url("../images/resized-hero.jpg") no-repeat center center fixed;
-  background-size: 100% auto;
+  background: url("../images/resized-hero.jpg") no-repeat center center;
+  background-size: auto 800px;
   background-height: 800px;
+  height: 800px;
 
+  @include desktop {
+    background: url("../images/resized-hero.jpg") no-repeat center center fixed;
+
+  }
+  @include phone {
+    height: 400px;
+    background-height: 400px;
+
+  }
   h2 {
     padding-top: 350px;
     color: white;
@@ -209,7 +171,7 @@ h2 {
 
     }
     @include phone {
-      padding-top: 75px;
+      padding-top: 200px;
     }
   }
 
@@ -238,10 +200,21 @@ h2 {
 
 }
 #ceremony {
-  background: url("../images/resized-ceremony.jpg") no-repeat center center fixed;
-  background-size: 100% auto;
+  background: url("../images/resized-ceremony.jpg") no-repeat center center;
+  background-size: auto 800px;
   background-height: 800px;
+  height: 800px;
 
+  @include desktop {
+    background: url("../images/resized-ceremony.jpg") no-repeat center center fixed;
+
+  }
+  @include phone {
+    height: 400px;
+    background-height: 400px;
+    background-size: auto 400px;
+
+  }
   div {
     padding-top: 175px;
     color: white;
@@ -257,10 +230,21 @@ h2 {
 
 }
 #reception {
-  background: url("../images/resized-reception.jpg") no-repeat center center fixed;
-  background-size: 100% auto;
+  background: url("../images/resized-reception.jpg") no-repeat center center;
+  background-size: auto 800px;
   background-height: 800px;
+  height: 800px;
 
+  @include desktop {
+    background: url("../images/resized-reception.jpg") no-repeat center center fixed;
+
+  }
+  @include phone {
+    height: 400px;
+    background-height: 400px;
+    background-size: auto 400px;
+
+  }
   div {
     padding-top: 175px;
     color: white;
@@ -270,25 +254,37 @@ h2 {
 
     }
     @include phone {
-      padding-top: 0px;
+      padding-top: 40px;
     }
   }
 
 }
 #registry {
-  background: url("../images/resized-registry.jpg") no-repeat center center fixed;
-  background-size: 100% auto;
+  background: url("../images/resized-registry.jpg") no-repeat center center;
+  background-size: auto 800px;
   background-height: 800px;
+  height: 800px;
+
+  @include desktop {
+    background: url("../images/resized-registry.jpg") no-repeat center center fixed;
+
+  }
+  @include phone {
+    height: 400px;
+    background-height: 400px;
+    background-size: auto 400px;
+
+  }
   div {
     padding-top: 325px;
     color: white;
 
     @include tablet {
-      padding-top: 100px;
+      padding-top: 290px;
 
     }
     @include phone {
-      padding-top: 75px;
+      padding-top: 175px;
     }
   }
 
@@ -301,20 +297,27 @@ h2 {
 
 }
 #rsvp {
-  background: url("../images/resized-rsvp.jpg") no-repeat center center fixed;
-  background-size: 100% auto;
+  background: url("../images/resized-rsvp.jpg") no-repeat center center;
+  background-size: auto 800px;
   background-height: 800px;
+  height: 800px;
 
+  @include desktop {
+    background: url("../images/resized-rsvp.jpg") no-repeat center center fixed;
+
+  }
+  @include phone {
+    height: 400px;
+    background-height: 400px;
+    background-size: auto 400px;
+
+  }
   div {
     padding-top: 500px;
     color: white;
 
-    @include tablet {
-      padding-top: 200px;
-
-    }
     @include phone {
-      padding-top: 85px;
+      padding-top: 270px;
     }
   }
 }
