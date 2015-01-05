@@ -105,18 +105,6 @@ body {
 .btn:hover {
   background: rgba(242, 242, 242, 0.25);
 }
-.angular-google-map-container {
-  height: 800px;
-  width: 100%;
-
-  @include tablet {
-    height: 400px;
-  }
-  @include phone {
-    height: 200px;
-  }
-
-}
 h2 {
   font-size: 80px;
   font-weight: bold;
@@ -255,6 +243,23 @@ h2 {
     }
     @include phone {
       padding-top: 40px;
+    }
+  }
+
+}
+#map {
+  height: 800px;
+
+  @include phone {
+    height: 400px;
+
+  }
+  ui-gmap-google-map .angular-google-map-container {
+    height: 800px;
+    width: 100%;
+
+    @include phone {
+      height: 400px;
     }
   }
 
