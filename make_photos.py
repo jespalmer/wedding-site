@@ -7,7 +7,7 @@ import sys
 def is_photo(name):
   valid = name[-3:] == 'jpg'
 
-  for section in ['reception', 'ceremony', 'hero', 'directions']:
+  for section in ['ceremony', 'directions', 'hero', 'reception', 'registry', 'rsvp']:
     valid = valid and name.find(section) == -1
 
   return valid

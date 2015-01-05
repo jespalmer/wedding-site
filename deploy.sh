@@ -11,6 +11,7 @@ git push origin :gh-pages
 git checkout --orphan gh-pages
 git reset
 
+./make_photos.py dist/images dist/photos.json
 cp -r dist/* .
 rm .gitignore
 
