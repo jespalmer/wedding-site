@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
+grunt build
+
 git branch -D gh-pages
 git push origin :gh-pages
 git checkout --orphan gh-pages
 git reset
 
-npm install
-bower install
-grunt build
 cp -r dist/* .
 rm .gitignore
 
